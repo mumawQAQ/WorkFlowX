@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model CrawlResult {
+  id          Int      @id @default(autoincrement())
+  
+  url         String   @unique
+  crawlType   String
+  data        String
+  dataType    String
+  
+  createAt    DateTime @default(now())
+  updateAt    DateTime @updatedAt
+
+  crawlTasks  CrawlTask[]
+}
+
+model FailedCrawl {
+  id                Int      @id @default(autoincrement())
+  
+  url               String   @unique
+  crawlType        String
+  latestFailReason String
+  failCount        Int      @default(1)
+  
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  crawlTasks      CrawlTask[]
+}
+
+
+model CrawlTask {
+  id        Int      @id @default(autoincrement())
+  
+  url       String   @unique
+  crawlType String
+  
+  status     String   @default("pending") // pending, in_progress, completed, failed
+  source    String?
+
+  resultId  Int?
+  result    CrawlResult? @relation(fields: [resultId], references: [id])
+  
+
+  failedId Int?
+  failed   FailedCrawl? @relation(fields: [failedId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

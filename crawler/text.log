@@ -1,0 +1,18 @@
+
+> crawler@0.0.1 test
+> tsx src/test.ts
+
+[34mDEBUG[39m[33m CheerioCrawler:SessionPool:[39m No 'persistStateKeyValueStoreId' options specified, this session pool's data has been saved in the KeyValueStore with the id: f8aa6181-9e6c-4ac7-bc31-898c05d979be
+[32mINFO[39m [33m CheerioCrawler:[39m Starting the crawler.
+[34mDEBUG[39m[33m CheerioCrawler:AutoscaledPool:Snapshotter:[39m Setting max memory of this run to 4096 MB. Use the CRAWLEE_MEMORY_MBYTES or CRAWLEE_AVAILABLE_MEMORY_RATIO environment variable to override it.
+[34mDEBUG[39m[33m CheerioCrawler:SessionPool:[39m Created new Session - session_DYVHtmQK08
+[34mDEBUG[39m Processing https://www.levels.fyi/companies/openai...
+[32mINFO[39m [33m CheerioCrawler:[39m All requests from the queue have been processed, the crawler will shut down.
+[34mDEBUG[39m[33m CheerioCrawler:SessionPool:[39m Persisting state[90m {"persistStateKey":"SDK_SESSION_POOL_STATE"}[39m
+[34mDEBUG[39m[33m CheerioCrawler:Statistics:[39m Persisting state[90m {"persistStateKey":"SDK_CRAWLER_STATISTICS_0"}[39m
+[34mDEBUG[39m[33m CheerioCrawler:SessionPool:[39m Persisting state[90m {"persistStateKey":"SDK_SESSION_POOL_STATE"}[39m
+[34mDEBUG[39m[33m CheerioCrawler:Statistics:[39m Persisting state[90m {"persistStateKey":"SDK_CRAWLER_STATISTICS_0"}[39m
+[34mDEBUG[39m[33m CheerioCrawler:Statistics:[39m Persisting state[90m {"persistStateKey":"SDK_CRAWLER_STATISTICS_0"}[39m
+[32mINFO[39m [33m CheerioCrawler:[39m Final request statistics:[90m {"requestsFinished":1,"requestsFailed":0,"retryHistogram":[1],"requestAvgFailedDurationMillis":null,"requestAvgFinishedDurationMillis":498,"requestsFinishedPerMinute":106,"requestsFailedPerMinute":0,"requestTotalDurationMillis":498,"requestsTotal":1,"crawlerRuntimeMillis":567}[39m
+[32mINFO[39m [33m CheerioCrawler:[39m Finished! Total 1 requests: 1 succeeded, 0 failed.[90m {"terminal":true}[39m
+[34mDEBUG[39m Crawler finished.
